@@ -8,3 +8,5 @@ exports.getUsers = async (req, res) => {
     res.status(500).send(err);
   }
 };
+
+

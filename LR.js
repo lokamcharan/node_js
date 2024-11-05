@@ -1,4 +1,4 @@
-// const { error } = require("console")
+
 const express=require("express")
 const fs=require("fs")
 var port=3010;
@@ -8,13 +8,10 @@ let register=[]
 api.use(express.json())
 
 api.post("/register",(req,res)=>{
-    // console.log(req.body)
+ 
 
     const {username,password,email,confirmPassword}=req.body
-    // console.log(username)
-    // console.log(password)
-    // console.log(email)
-    // console.log(confirmPassword);
+   
 
     fs.readFile("index.json",(err,data)=>{
         const users=JSON.parse(data)
@@ -46,7 +43,7 @@ api.get("/login",(req,res)=>{
    
 
     fs.readFile("./index.json",(err,data)=>{
-        // console.log(JSON.parse(data));
+     
         const users=JSON.parse(data)
         console.log(users)
         const foundUser = users.find(user => user.username === username && user.password === password)
@@ -62,13 +59,7 @@ console.log(foundUser);
     }
     })
 
-    // const users=JSON.parse(req.body)
-
-
-
-    // console.log(req.body)
-    // console.log(username)
-    // console.log(password)
+  
     
 })
 
